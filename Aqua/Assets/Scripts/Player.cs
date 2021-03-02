@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
     {
         Vector3 move = new Vector3(Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime, 0, 0);
 
-        transform.position += move;
+        transform.position += move * (isPlaying ? 1: -1);
     }
 
     void LateUpdate()
@@ -54,11 +54,6 @@ public class Player : MonoBehaviour
 
     public void SetPosition(Position position)
     {
-        if (Position == position)
-        {
-            return;
-        }
-
         Position = position;
 
         switch (position)
@@ -76,14 +71,6 @@ public class Player : MonoBehaviour
     void SetIsPlaying(bool f)
     {
         isPlaying = f;
-        //gameObject.SetActive(f);
-
-        //foreach (SkinnedMeshRenderer renderer in Renderers)
-        //{
-        //    renderer.enabled = f;
-        //}
-
-        //MeshRenderer.enabled = f;
     }
 
     public void ChangePosition()
@@ -103,7 +90,7 @@ public class Player : MonoBehaviour
         if (!collision.gameObject.CompareTag("Ground"))
         {
             another.transform.position = new Vector3(
-                transform.position.x,
+                -transform.position.x,
                 another.transform.position.y,
                 -transform.position.z);
         }

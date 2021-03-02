@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             AboveGround.ChangePosition();
             UnderWater.ChangePosition();
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
                     break;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Space))
+        else if (Input.GetKeyDown(KeyCode.C))
         {
             ChangeViewPoint();
         }
