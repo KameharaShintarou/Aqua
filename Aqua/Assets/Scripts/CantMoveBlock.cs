@@ -10,8 +10,13 @@ public class CantMoveBlock : MonoBehaviour
 
     void Awake()
     {
+        Vector3 position = new Vector3(
+            -transform.position.x,
+            -transform.position.y,
+             transform.position.z);
+
         Instantiate(BlockPrefab,
-            -transform.position,
+            position,
             Quaternion.EulerAngles(Vector3.zero),
             BlocksParent.transform);
     }

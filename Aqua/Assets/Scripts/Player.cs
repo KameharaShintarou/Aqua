@@ -16,7 +16,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     Player another;
 
+    Position PlayingPosition;
     bool isPlaying;
+    bool isUp;
 
     float moveSpeed = 10;
 
@@ -28,15 +30,18 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-
+        isUp = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime, 0, 0);
+        Vector3 move = new Vector3(
+            Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime * (isPlaying ? 1 : -1),
+            0,
+            isUp ? Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime * (PlayingPosition == Position.UnderWater ? -1 : 1) : 0);
 
-        transform.position += move * (isPlaying ? 1: -1);
+        transform.position += move;
     }
 
     void LateUpdate()
@@ -49,7 +54,7 @@ public class Player : MonoBehaviour
         UpCamera.transform.position = new Vector3(
             transform.position.x,
             UpCamera.transform.position.y,
-            UpCamera.transform.position.z);
+            transform.position.z);
     }
 
     public void SetPosition(Position position)
@@ -60,6 +65,11 @@ public class Player : MonoBehaviour
         {
             case Position.AboveGround:
                 SetIsPlaying(true);
+
+                another.transform.position = new Vector3(
+                    -transform.position.x,
+                    another.transform.position.y,
+                    -transform.position.z);
                 break;
 
             case Position.UnderWater:
@@ -68,13 +78,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    void SetIsPlaying(bool f)
+    public void ChangePosition(Position position)
     {
-        isPlaying = f;
-    }
+        PlayingPosition = position;
 
-    public void ChangePosition()
-    {
         if (isPlaying)
         {
             SetIsPlaying(false);
@@ -85,6 +92,16 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void SetIsUp(bool f)
+    {
+        isUp = f;
+    }
+
+    void SetIsPlaying(bool f)
+    {
+        isPlaying = f;
+    }
+
     void OnCollisionStay(Collision collision)
     {
         if (!collision.gameObject.CompareTag("Ground"))
@@ -92,7 +109,7 @@ public class Player : MonoBehaviour
             another.transform.position = new Vector3(
                 -transform.position.x,
                 another.transform.position.y,
-                -transform.position.z);
+                transform.position.z);
         }
     }
 }

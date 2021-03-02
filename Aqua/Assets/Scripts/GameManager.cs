@@ -33,9 +33,6 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            AboveGround.ChangePosition();
-            UnderWater.ChangePosition();
-
             switch (PlayingPosition)
             {
                 case Position.AboveGround:
@@ -45,6 +42,9 @@ public class GameManager : MonoBehaviour
                     PlayingPosition = Position.AboveGround;
                     break;
             }
+
+            AboveGround.ChangePosition(PlayingPosition);
+            UnderWater.ChangePosition(PlayingPosition);
         }
         else if (Input.GetKeyDown(KeyCode.C))
         {

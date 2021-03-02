@@ -37,9 +37,9 @@ public class World : MonoBehaviour
         
     }
 
-    public void ChangePosition()
+    public void ChangePosition(Position position)
     {
-        Player.ChangePosition();
+        Player.ChangePosition(position);
 
         switch (ViewPoint)
         {
@@ -71,5 +71,7 @@ public class World : MonoBehaviour
                     break;
             }
         }
+
+        Player.SetIsUp(viewPoint == ViewPoint.Up);
     }
 }
