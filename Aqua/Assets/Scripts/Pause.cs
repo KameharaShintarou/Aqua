@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using System.Collections;
 
 public class Pause : MonoBehaviour
@@ -6,25 +7,27 @@ public class Pause : MonoBehaviour
 
 	[SerializeField]
 	//　ポーズした時に表示するUIのプレハブ
-	private GameObject pauseUIPrefab;
+	public GameObject pauseUIPrefab;
 	//　ポーズUIのインスタンス
-	private GameObject pauseUIInstance;
+	public GameObject pauseUIInstance;
 
 	// Update is called once per frame
 	void Update()
 	{
 		if (Input.GetKeyDown("p"))
 		{
+			Debug.Log("1");
+			//UIがなかったら
 			if (pauseUIInstance == null)
 			{
+				Debug.Log("2");
+				//UI召喚
 				pauseUIInstance = GameObject.Instantiate(pauseUIPrefab) as GameObject;
+				//時間停止
 				Time.timeScale = 0f;
-			}
-			else
-			{
-				Destroy(pauseUIInstance);
-				Time.timeScale = 1f;
 			}
 		}
 	}
 }
+
+
