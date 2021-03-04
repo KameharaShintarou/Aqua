@@ -140,6 +140,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d49aa3073619b43b5072a35c4c1ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &296195554 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1546458168733893527, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 3601028230736297628}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &384646366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,6 +1288,11 @@ PrefabInstance:
       objectReference: {fileID: 1795773125}
     - target: {fileID: 3601028230131462657, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
         type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 296195554}
+    - target: {fileID: 3601028230131462657, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
+        type: 3}
       propertyPath: SideCamera
       value: 
       objectReference: {fileID: 1004814648}
@@ -1304,6 +1315,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1570219694}
     m_Modifications:
+    - target: {fileID: 1546458168733893527, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 791ab9dee295e7d4aa456660a25f4a69, type: 3}
+    - target: {fileID: 1546458168733893527, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c3001fadb1e67e843b800450351e0977, type: 2}
+    - target: {fileID: 1546458168733893527, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
+        type: 3}
+      propertyPath: m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546458168733893527, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
+        type: 3}
+      propertyPath: m_CullingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546458168733893527, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1564959793275410267, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
         type: 3}
       propertyPath: m_UseGravity
@@ -1374,6 +1410,11 @@ PrefabInstance:
       propertyPath: UpCamera
       value: 
       objectReference: {fileID: 384646369}
+    - target: {fileID: 3601028230131462657, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 296195554}
     - target: {fileID: 3601028230131462657, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
         type: 3}
       propertyPath: SideCamera

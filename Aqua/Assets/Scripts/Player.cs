@@ -26,17 +26,41 @@ public class Player : MonoBehaviour
     [SerializeField]
     SkinnedMeshRenderer[] Renderers;
 
+    [SerializeField]
+    private Animator animator = null;
+
+    // プレイヤーの状態を表します。
+    enum PlayerState
+    {
+        Idle,
+        Walk,
+    }
+    // 現在のプレイヤー状態
+    [SerializeField]
+    PlayerState currentState = PlayerState.Idle;
+    static readonly int speedId = Animator.StringToHash("Speed");
+
     void Start()
     {
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        switch (currentState)
+        {
+            case PlayerState.Idle:
+            case PlayerState.Walk:
         Vector3 move = new Vector3(Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime, 0, 0);
-
-        transform.position += move * (isPlaying ? 1: -1);
+                var horizontal = Input.GetAxis("Horizontal");
+                transform.position += move * (isPlaying ? 1: -1);
+                animator.SetFloat(speedId, Mathf.Abs(horizontal));
+                break;
+            default:
+                break;
+        }
     }
 
     void LateUpdate()
