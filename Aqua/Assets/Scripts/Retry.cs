@@ -1,12 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class GameEnd : MonoBehaviour
+using UnityEngine.SceneManagement;
+public class Retry : MonoBehaviour
 {
     public void OnClickRetryButton()
     {
-        Application.Quit();
+        SceneManager.LoadScene("Stage");
     }
-
 }
