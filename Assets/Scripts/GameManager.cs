@@ -11,6 +11,9 @@ public enum ViewPoint
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
+    InputManager InputManager;
+
+    [SerializeField]
     World AboveGround;
 
     [SerializeField]
@@ -22,20 +25,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     ViewPoint ViewPoint;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (InputManager.GetJoystickButtonTrigger())
         {
-            AboveGround.ChangePosition();
-            UnderWater.ChangePosition();
-
             switch (PlayingPosition)
             {
                 case Position.AboveGround:
@@ -45,8 +38,12 @@ public class GameManager : MonoBehaviour
                     PlayingPosition = Position.AboveGround;
                     break;
             }
+
+            AboveGround.ChangePosition(PlayingPosition);
+            UnderWater.ChangePosition(PlayingPosition);
         }
-        else if (Input.GetKeyDown(KeyCode.C))
+        else if (Input.GetKeyDown("joystick button 4") ||
+                 Input.GetKeyDown("joystick button 5"))
         {
             ChangeViewPoint();
         }
