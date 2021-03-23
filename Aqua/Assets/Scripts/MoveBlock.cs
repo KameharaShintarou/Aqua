@@ -11,6 +11,13 @@ public class MoveBlock : MonoBehaviour
 
     Vector3 beforePosition;
 
+    BoxCollider Collider;
+
+    void Start()
+    {
+        Collider = gameObject.GetComponent<BoxCollider>();
+    }
+
     void Update()
     {
         if (beforePosition != transform.position)
@@ -33,5 +40,10 @@ public class MoveBlock : MonoBehaviour
     public void SetIsWall(bool f)
     {
         isWall = f;
+    }
+
+    public BoxCollider GetCollider()
+    {
+        return Collider;
     }
 }

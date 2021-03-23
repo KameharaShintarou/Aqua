@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    // 
     [SerializeField]
     Position Position;
 
     [SerializeField]
-    Camera SideCamera;
+    Camera sideCamera;
 
     [SerializeField]
-    Camera UpCamera;
+    Camera upCamera;
 
     [SerializeField]
     Player another;
@@ -23,8 +24,14 @@ public class Player : MonoBehaviour
     bool isPlaying;
     bool isUp;
 
+    // 物をつかんでいるかどうか
     bool isGrab;
+    // 掴んでいるブロック
     MoveBlock GrabBlock;
+    [SerializeField]
+    BoxCollider MoveBlockCollider;
+    Vector3 difference;
+
 
     bool isGrounded;
 
@@ -35,6 +42,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         isUp = false;
+        MoveBlockCollider.enabled = false;
     }
 
     void Update()
@@ -52,9 +60,34 @@ public class Player : MonoBehaviour
 
         if (isGrab &&
             PlayingPosition == Position &&
+            Input.GetKeyDown("joystick button 1"))
+        {
+            MoveBlockCollider.enabled = true;
+            MoveBlockCollider.size = GrabBlock.GetCollider().size;
+
+            difference = new Vector3(GrabBlock.transform.position.x - transform.position.x,
+                                     MoveBlockCollider.size.y / 2f,
+                                    (GrabBlock.transform.position.z - transform.position.z) * (Position == Position.AboveGround ? 1 : -1));
+
+            MoveBlockCollider.center = difference;
+            GrabBlock.GetCollider().enabled = false;
+
+            difference = new Vector3(difference.x,
+                                     GrabBlock.transform.position.y - transform.position.y,
+                                    -difference.z);
+        }
+        if (isGrab &&
+            PlayingPosition == Position &&
             Input.GetKey("joystick button 1"))
         {
-            GrabBlock.transform.position += velocity;
+            GrabBlock.transform.position = transform.position + difference;
+        }
+        if (isGrab &&
+            PlayingPosition == Position &&
+            Input.GetKeyUp("joystick button 1"))
+        {
+            MoveBlockCollider.enabled = false;
+            GrabBlock.GetCollider().enabled = true;
         }
         if (Input.GetKeyDown("joystick button 0"))
         {
@@ -69,14 +102,14 @@ public class Player : MonoBehaviour
 
     void LateUpdate()
     {
-        SideCamera.transform.position = new Vector3(
+        sideCamera.transform.position = new Vector3(
             transform.position.x,
-            SideCamera.transform.position.y,
-            SideCamera.transform.position.z);
+            sideCamera.transform.position.y,
+            sideCamera.transform.position.z);
 
-        UpCamera.transform.position = new Vector3(
+        upCamera.transform.position = new Vector3(
             transform.position.x,
-            UpCamera.transform.position.y,
+            upCamera.transform.position.y,
             transform.position.z);
     }
 
@@ -94,6 +127,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    // 接地判定
     bool IsGrounded()
     {
         Ray ray = new Ray(
@@ -109,7 +143,7 @@ public class Player : MonoBehaviour
             if ((!hit.collider.CompareTag("Player")) &&
                 hit.distance <= 0.1f)
             {
-                Debug.Log("Ground");
+                //Debug.Log("Ground");
                 return true;
             }
         }
@@ -176,6 +210,11 @@ public class Player : MonoBehaviour
     {
         return isPlaying;
     }
+
+    //public void SetDifference(Vector3 difference)
+    //{
+    //    this.difference = difference;
+    //}
 
     void OnCollisionStay(Collision collision)
     {

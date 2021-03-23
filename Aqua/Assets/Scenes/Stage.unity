@@ -3428,7 +3428,17 @@ PrefabInstance:
       objectReference: {fileID: 1795773125}
     - target: {fileID: 3601028230131462657, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
         type: 3}
+      propertyPath: upCamera
+      value: 
+      objectReference: {fileID: 1795773125}
+    - target: {fileID: 3601028230131462657, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
+        type: 3}
       propertyPath: SideCamera
+      value: 
+      objectReference: {fileID: 1004814648}
+    - target: {fileID: 3601028230131462657, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
+        type: 3}
+      propertyPath: sideCamera
       value: 
       objectReference: {fileID: 1004814648}
     - target: {fileID: 3601028230131462657, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
@@ -3680,7 +3690,17 @@ PrefabInstance:
       objectReference: {fileID: 384646369}
     - target: {fileID: 3601028230131462657, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
         type: 3}
+      propertyPath: upCamera
+      value: 
+      objectReference: {fileID: 384646369}
+    - target: {fileID: 3601028230131462657, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
+        type: 3}
       propertyPath: SideCamera
+      value: 
+      objectReference: {fileID: 777066171}
+    - target: {fileID: 3601028230131462657, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
+        type: 3}
+      propertyPath: sideCamera
       value: 
       objectReference: {fileID: 777066171}
     - target: {fileID: 3601028230131462663, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
