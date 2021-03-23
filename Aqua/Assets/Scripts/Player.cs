@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
 
         if (isGrab &&
             PlayingPosition == Position &&
-            Input.GetKeyDown("joystick button 1"))
+            Input.GetButtonDown("Fire2"))
         {
             MoveBlockCollider.enabled = true;
             MoveBlockCollider.size = GrabBlock.GetCollider().size;
@@ -78,18 +78,18 @@ public class Player : MonoBehaviour
         }
         if (isGrab &&
             PlayingPosition == Position &&
-            Input.GetKey("joystick button 1"))
+            Input.GetButton("Fire2"))
         {
             GrabBlock.transform.position = transform.position + difference;
         }
         if (isGrab &&
             PlayingPosition == Position &&
-            Input.GetKeyUp("joystick button 1"))
+            Input.GetButtonUp("Fire2"))
         {
             MoveBlockCollider.enabled = false;
             GrabBlock.GetCollider().enabled = true;
         }
-        if (Input.GetKeyDown("joystick button 0"))
+        if (Input.GetButtonDown("Fire1"))
         {
             Jump();
         }
@@ -123,7 +123,7 @@ public class Player : MonoBehaviour
     {
         if (isGrounded)
         {
-            Rigidbody.AddForce((Position == Position.AboveGround ? Vector3.up : Vector3.down) * 5, ForceMode.Impulse);
+            Rigidbody.AddForce((Position == Position.AboveGround ? Vector3.up : Vector3.down) * 7, ForceMode.Impulse);
         }
     }
 
