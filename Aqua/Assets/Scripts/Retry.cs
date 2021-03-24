@@ -7,6 +7,5 @@ public class Retry : MonoBehaviour
     public void OnClickRetryButton()
     {
         SceneManager.LoadScene("Stage");
-        Debug.Log("hh");
     }
 }

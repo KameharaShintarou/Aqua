@@ -3356,6 +3356,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1648060641}
     m_Modifications:
+    - target: {fileID: 1546458168733893527, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
+        type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1564959793275410267, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
         type: 3}
       propertyPath: m_UseGravity

@@ -20,6 +20,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     Rigidbody Rigidbody;
 
+    [SerializeField]
+    private Animator animator = null;
+
     Position PlayingPosition;
     bool isPlaying;
     bool isUp;
@@ -39,65 +42,100 @@ public class Player : MonoBehaviour
 
     Vector3 velocity;
 
+    // 事前参照用の変数
+    private new Rigidbody rigidbody = null;
+    // アニメーションのパラメーターID
+    static readonly int speedId = Animator.StringToHash("Speed");
+
+    // プレイヤーの状態を表します。
+    enum PlayerState
+    {
+        Idle,
+        Walk,
+    }
+
+    // 現在のプレイヤー状態
+    [SerializeField]
+    PlayerState currentState = PlayerState.Idle;
+
     void Start()
     {
         isUp = false;
         MoveBlockCollider.enabled = false;
+
+        // コンポーネントを事前に参照
+        rigidbody = GetComponent<Rigidbody>();
+        currentState = PlayerState.Idle;
     }
 
     void Update()
     {
-        isGrounded = IsGrounded();
-
-        velocity = Vector3.zero;
-
-        velocity = new Vector3(
-            Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime * (isPlaying ? 1 : -1),
-            0,
-            isUp ? Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime * (PlayingPosition == Position.UnderWater ? 1 : -1) : 0);
-
-        transform.position += velocity;
-
-        if (isGrab &&
-            PlayingPosition == Position &&
-            Input.GetButtonDown("Fire2"))
+        switch (currentState)
         {
-            MoveBlockCollider.enabled = true;
-            MoveBlockCollider.size = GrabBlock.GetCollider().size;
+            case PlayerState.Idle:
+            case PlayerState.Walk:
+                // 移動操作[-1, 1]
+                var horizontal = Input.GetAxis("Horizontal");
 
-            difference = new Vector3(GrabBlock.transform.position.x - transform.position.x,
-                                     MoveBlockCollider.size.y / 2f,
-                                    (GrabBlock.transform.position.z - transform.position.z) * (Position == Position.AboveGround ? 1 : -1));
+                animator.SetFloat(speedId, Mathf.Abs(horizontal));
 
-            MoveBlockCollider.center = difference;
-            GrabBlock.GetCollider().enabled = false;
+                isGrounded = IsGrounded();
 
-            difference = new Vector3(difference.x,
-                                     GrabBlock.transform.position.y - transform.position.y,
-                                    -difference.z);
-        }
-        if (isGrab &&
-            PlayingPosition == Position &&
-            Input.GetButton("Fire2"))
-        {
-            GrabBlock.transform.position = transform.position + difference;
-        }
-        if (isGrab &&
-            PlayingPosition == Position &&
-            Input.GetButtonUp("Fire2"))
-        {
-            MoveBlockCollider.enabled = false;
-            GrabBlock.GetCollider().enabled = true;
-        }
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Jump();
+                velocity = Vector3.zero;
+
+                velocity = new Vector3(
+                    Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime * (isPlaying ? 1 : -1),
+                    0,
+                    isUp ? Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime * (PlayingPosition == Position.UnderWater ? 1 : -1) : 0);
+
+                transform.position += velocity;
+
+                if (isGrab &&
+                    PlayingPosition == Position &&
+                    Input.GetButtonDown("Fire2"))
+                {
+                    MoveBlockCollider.enabled = true;
+                    MoveBlockCollider.size = GrabBlock.GetCollider().size;
+
+                    difference = new Vector3(GrabBlock.transform.position.x - transform.position.x,
+                                             MoveBlockCollider.size.y / 2f,
+                                            (GrabBlock.transform.position.z - transform.position.z) * (Position == Position.AboveGround ? 1 : -1));
+
+                    MoveBlockCollider.center = difference;
+                    GrabBlock.GetCollider().enabled = false;
+
+                    difference = new Vector3(difference.x,
+                                             GrabBlock.transform.position.y - transform.position.y,
+                                            -difference.z);
+                }
+                if (isGrab &&
+                    PlayingPosition == Position &&
+                    Input.GetButton("Fire2"))
+                {
+                    GrabBlock.transform.position = transform.position + difference;
+                }
+                if (isGrab &&
+                    PlayingPosition == Position &&
+                    Input.GetButtonUp("Fire2"))
+                {
+                    MoveBlockCollider.enabled = false;
+                    GrabBlock.GetCollider().enabled = true;
+                }
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    Jump();
+                }
+
+                if (!isGrounded)
+                {
+                    AddGravityForce();
+                }
+                break;
+            default:
+                break;
         }
 
-        if (!isGrounded)
-        {
-            AddGravityForce();
-        }
+
     }
 
     void LateUpdate()
