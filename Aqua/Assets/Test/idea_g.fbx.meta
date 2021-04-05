@@ -48,8 +48,8 @@ ModelImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -88,7 +88,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: suka_l
+    - boneName: left_asi
       humanName: LeftUpperLeg
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -96,7 +96,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: suka_r
+    - boneName: right_asi
       humanName: RightUpperLeg
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -104,7 +104,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: joint43
+    - boneName: ririri:left_hiza
       humanName: LeftLowerLeg
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -112,7 +112,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: joint47
+    - boneName: ririri:right_hiza1
       humanName: RightLowerLeg
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -120,7 +120,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: joint44
+    - boneName: ririri:left_anyo
       humanName: LeftFoot
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -128,7 +128,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: joint48
+    - boneName: ririri:right_anyo1
       humanName: RightFoot
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -160,23 +160,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: joint59
-      humanName: LeftShoulder
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
     - boneName: ririri:right_ude1
-      humanName: RightShoulder
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: ririri:right_hiji1
       humanName: RightUpperArm
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -184,7 +168,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: joint58
+    - boneName: ririri:right_hiji1
       humanName: RightLowerArm
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -192,7 +176,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: joint45
+    - boneName: ririri:left_saki
       humanName: LeftToes
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -200,8 +184,48 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: joint49
+    - boneName: ririri:right_saki1
       humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: right_ude1
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: right_hiji1
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint59
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint58
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: ririri:atamasaki
+      humanName: Head
       limit:
         min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 0, z: 0}
@@ -214,13 +238,218 @@ ModelImporter:
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: ribonn
+    - name: all
+      parentName: idea_g(Clone)
+      position: {x: -0.003463227, y: 0.39667773, z: 0.0025803586}
+      rotation: {x: 0.004247924, y: -0.0043640677, z: -0.7165646, w: 0.69749415}
+      scale: {x: 1, y: 1, z: 1}
+    - name: left_asi
+      parentName: all
+      position: {x: -0.07876627, y: -0.0836856, z: -0.009087415}
+      rotation: {x: -0.00021651154, y: -0.02482434, z: 0.9987976, w: -0.042274345}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ririri:left_hiza
+      parentName: left_asi
+      position: {x: -0.2562803, y: -0.000510672, z: -4.690692e-17}
+      rotation: {x: 0.025332982, y: -0.08779496, z: -0.004345826, w: 0.99580693}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ririri:left_anyo
+      parentName: ririri:left_hiza
+      position: {x: -0.19620141, y: 0.00047276542, z: 0.001524026}
+      rotation: {x: 0.023716068, y: 0.73744065, z: -0.015394869, w: 0.67481995}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ririri:left_saki
+      parentName: ririri:left_anyo
+      position: {x: -0.15045595, y: 8.881784e-18, z: -0.009429168}
+      rotation: {x: 0.0041944915, y: 0.0071697948, z: 0.007565778, w: 0.9999369}
+      scale: {x: 1, y: 1, z: 1}
+    - name: right_asi
+      parentName: all
+      position: {x: -0.08315737, y: 0.0790709, z: -0.011111056}
+      rotation: {x: 0.999198, y: -0.015317959, z: 0.0014005888, w: 0.036968637}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ririri:right_hiza1
+      parentName: right_asi
+      position: {x: 0.25628, y: 0.00051063637, z: -1.309679e-11}
+      rotation: {x: 0.025332982, y: -0.08779496, z: -0.004345826, w: 0.99580693}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ririri:right_anyo1
+      parentName: ririri:right_hiza1
+      position: {x: 0.19620168, y: -0.00047275072, z: -0.0015240724}
+      rotation: {x: 0.023716068, y: 0.73744065, z: -0.015394869, w: 0.67481995}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ririri:right_saki1
+      parentName: ririri:right_anyo1
+      position: {x: 0.15045595, y: 1.5603607e-10, z: 0.00942917}
+      rotation: {x: 0.0041944915, y: 0.0071697948, z: 0.007565778, w: 0.9999369}
+      scale: {x: 1, y: 1, z: 1}
+    - name: suka1_l
+      parentName: all
+      position: {x: -0.20789406, y: -0.064945295, z: -0.10795093}
+      rotation: {x: -0.002515795, y: 0.975036, z: -0.011833469, w: -0.22171699}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint51
+      parentName: suka1_l
+      position: {x: -0.20391604, y: -0.021690952, z: 0.020729458}
+      rotation: {x: -0.012603141, y: -0.0554516, z: 0.017710349, w: 0.99822474}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint52
+      parentName: joint51
+      position: {x: -0.12381867, y: -0.011003249, z: -0.008643306}
+      rotation: {x: 0.0039633005, y: -0.09614251, z: -0.016218456, w: 0.9952276}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint53
+      parentName: joint52
+      position: {x: -0.116352335, y: -0.012225033, z: -0.0064452356}
+      rotation: {x: -0.002138811, y: -0.07157348, z: -0.010011053, w: 0.9973828}
+      scale: {x: 1, y: 1, z: 1}
+    - name: suka1_r
+      parentName: all
+      position: {x: -0.21120888, y: 0.057919476, z: -0.109447934}
+      rotation: {x: -0.021080205, y: 0.97482103, z: -0.006022596, w: -0.22190839}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint55
+      parentName: suka1_r
+      position: {x: -0.2039158, y: 0.021690957, z: 0.020728955}
+      rotation: {x: 0.012603141, y: -0.0554516, z: -0.017710349, w: 0.99822474}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint56
+      parentName: joint55
+      position: {x: -0.12381868, y: 0.011003249, z: -0.008643293}
+      rotation: {x: -0.0039633005, y: -0.09614251, z: 0.016218456, w: 0.9952276}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint57
+      parentName: joint56
+      position: {x: -0.11635265, y: 0.012225024, z: -0.0064452807}
+      rotation: {x: 0.002138811, y: -0.07157348, z: 0.010011053, w: 0.9973828}
+      scale: {x: 1, y: 1, z: 1}
+    - name: suka_l
+      parentName: all
+      position: {x: -0.20789371, y: -0.062471036, z: 0.0951698}
+      rotation: {x: -0.22166991, y: 0.000043421347, z: 0.97510785, w: -0.005216139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint43
+      parentName: suka_l
+      position: {x: -0.19354406, y: 0.021925688, z: -0.0008974962}
+      rotation: {x: 0.012603141, y: -0.0554516, z: -0.017710349, w: 0.99822474}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint44
+      parentName: joint43
+      position: {x: -0.12335325, y: 0.011003319, z: -0.009975426}
+      rotation: {x: -0.0039633005, y: -0.09614251, z: 0.016218456, w: 0.9952276}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint45
+      parentName: joint44
+      position: {x: -0.118525915, y: 0.012168245, z: -0.0067594144}
+      rotation: {x: 0.002138811, y: -0.07157348, z: 0.010011053, w: 0.9973828}
+      scale: {x: 1, y: 1, z: 1}
+    - name: suka_r
+      parentName: all
+      position: {x: -0.21120888, y: 0.06039369, z: 0.09367319}
+      rotation: {x: -0.21822655, y: 0.013459723, z: 0.97411627, w: -0.05738941}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint47
+      parentName: suka_r
+      position: {x: -0.19459707, y: -0.008532542, z: 0.00032258144}
+      rotation: {x: -0.015236792, y: -0.106490046, z: -0.015878815, w: 0.99407023}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint48
+      parentName: joint47
+      position: {x: -0.12370417, y: -0.011003249, z: 0.003587307}
+      rotation: {x: 0.0030683368, y: -0.041445155, z: -0.016411318, w: 0.99900126}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint49
+      parentName: joint48
+      position: {x: -0.1185254, y: -0.012168403, z: -0.006758935}
+      rotation: {x: -0.002068161, y: -0.06453827, z: -0.010025888, w: 0.99786276}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ue
+      parentName: all
+      position: {x: -0.22174406, y: 1.1496111e-17, z: 1.1978401e-17}
+      rotation: {x: -0.011477881, y: -0.002689894, z: 0.033404674, w: 0.99937236}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ririri:sebone
+      parentName: ue
+      position: {x: -0.1214784, y: 0.004281609, z: -0.036673967}
+      rotation: {x: 0.0000015459453, y: -0.0031403138, z: -0.032077447, w: 0.9994804}
+      scale: {x: 1, y: 1, z: 1}
+    - name: right_ude1
+      parentName: ririri:sebone
+      position: {x: -0.05038701, y: -0.078514, z: 0.034609426}
+      rotation: {x: 0.0299321, y: -0.018872289, z: 0.75367075, w: 0.65629894}
+      scale: {x: 1, y: 1, z: 1}
+    - name: right_hiji1
+      parentName: right_ude1
+      position: {x: -0.19669174, y: -0.0015768352, z: 0.011410428}
+      rotation: {x: -0.0006886324, y: 0.017600987, z: 0.02855674, w: 0.999437}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint59
+      parentName: right_hiji1
+      position: {x: -0.25463375, y: -0.013936797, z: 0.005710473}
+      rotation: {x: 0.99848276, y: 0.055026244, z: -0.00077018957, w: 0.0019304119}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint41
+      parentName: joint59
+      position: {x: -0.11279842, y: -0.0009834017, z: -0.009259619}
+      rotation: {x: 0.011730553, y: -0.021284323, z: -0.32462314, w: 0.9455312}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ririri:kubi
+      parentName: ririri:sebone
+      position: {x: -0.08973532, y: -0.0039468887, z: 0.03587231}
+      rotation: {x: 0.00243947, y: 0.02055456, z: 0.012286045, w: 0.99971026}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ririri:atamasaki
+      parentName: ririri:kubi
+      position: {x: -0.43099833, y: -0.0000034784998, z: -0.010844305}
+      rotation: {x: 0.010200977, y: -0.014456516, z: 0.00007065177, w: 0.9998435}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ririri:right_ude1
+      parentName: ririri:sebone
+      position: {x: -0.054115724, y: 0.07522139, z: 0.0362539}
+      rotation: {x: -0.06112049, y: -0.04691445, z: -0.73550177, w: 0.6731274}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ririri:right_hiji1
+      parentName: ririri:right_ude1
+      position: {x: -0.1944135, y: 0.0015767895, z: 0.031959172}
+      rotation: {x: 0.00040820372, y: 0.15425481, z: 0.05202965, w: 0.9866601}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint58
+      parentName: ririri:right_hiji1
+      position: {x: -0.24646632, y: 0.05461816, z: -0.03655413}
+      rotation: {x: 0.9866718, y: -0.13465674, z: 0.090495385, w: -0.012527673}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ririri:joint41
+      parentName: joint58
+      position: {x: -0.11265799, y: 0.0009838556, z: -0.010837806}
+      rotation: {x: -0.32453308, y: 0.94535905, z: -0.014002545, w: 0.02790228}
+      scale: {x: 1, y: 1, z: 1}
+    - name: fukutati
       parentName: idea_g(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: kami
-      parentName: idea_g(Clone)
+    - name: doresu
+      parentName: fukutati
+      position: {x: -0, y: -0.0000017876102, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: epuronn1
+      parentName: fukutati
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: eri
+      parentName: fukutati
+      position: {x: -0, y: 0.00000049786024, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: kutu
+      parentName: fukutati
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mimi
+      parentName: fukutati
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
@@ -234,221 +463,16 @@ ModelImporter:
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: fukutati
+    - name: kami
       parentName: idea_g(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: mimi
-      parentName: fukutati
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: epuronn1
-      parentName: fukutati
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: eri
-      parentName: fukutati
-      position: {x: -0, y: 0.00000049786024, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: doresu
-      parentName: fukutati
-      position: {x: -0, y: -0.0000017876102, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: kutu
-      parentName: fukutati
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: all
+    - name: ribonn
       parentName: idea_g(Clone)
-      position: {x: -0.003463227, y: 0.23319547, z: -0.09440184}
-      rotation: {x: 0.004247924, y: -0.0043640677, z: -0.71656466, w: 0.69749415}
-      scale: {x: 1.0000008, y: 1.000001, z: 1}
-    - name: ue
-      parentName: all
-      position: {x: -0.22174406, y: 1.1496111e-17, z: 1.1978401e-17}
-      rotation: {x: -0.011477882, y: -0.0026898955, z: 0.033404768, w: 0.9993724}
-      scale: {x: 1.0000002, y: 1.0000005, z: 1}
-    - name: ririri:sebone
-      parentName: ue
-      position: {x: -0.1214784, y: 0.004281609, z: -0.036673967}
-      rotation: {x: 0.0000015459951, y: -0.0031403112, z: -0.032077547, w: 0.9994804}
-      scale: {x: 1.0000006, y: 1.0000011, z: 0.99999946}
-    - name: ririri:kubi
-      parentName: ririri:sebone
-      position: {x: -0.08973532, y: -0.0039468887, z: 0.03587231}
-      rotation: {x: 0.0024394684, y: 0.020554563, z: 0.012286072, w: 0.99971026}
-      scale: {x: 1.0000002, y: 1.000001, z: 0.99999946}
-    - name: ririri:atamasaki
-      parentName: ririri:kubi
-      position: {x: -0.43099833, y: -0.0000034784998, z: -0.010844305}
-      rotation: {x: 0.010200976, y: -0.01445652, z: 0.00007078671, w: 0.9998435}
-      scale: {x: 1.0000001, y: 1.0000005, z: 1}
-    - name: ririri:right_ude1
-      parentName: ririri:sebone
-      position: {x: -0.054115724, y: 0.07522139, z: 0.0362539}
-      rotation: {x: 0.061120477, y: 0.046914443, z: 0.73550177, w: -0.67312735}
-      scale: {x: 1.0000012, y: 1.0000007, z: 0.9999999}
-    - name: ririri:right_hiji1
-      parentName: ririri:right_ude1
-      position: {x: -0.1944135, y: 0.0015767895, z: 0.031959172}
-      rotation: {x: 0.0009926632, y: 0.15322262, z: 0.12652698, w: 0.98005754}
-      scale: {x: 1.0000008, y: 1.0000011, z: 1.0000002}
-    - name: joint58
-      parentName: ririri:right_hiji1
-      position: {x: -0.24646632, y: 0.05461816, z: -0.03655413}
-      rotation: {x: 0.9885148, y: -0.109798245, z: 0.10324792, w: -0.011083468}
-      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000008}
-    - name: ririri:joint41
-      parentName: joint58
-      position: {x: -0.11265799, y: 0.0009838556, z: -0.010837806}
-      rotation: {x: 0.324533, y: -0.945359, z: 0.0140025355, w: -0.027902286}
-      scale: {x: 1.000001, y: 1, z: 1.0000004}
-    - name: right_ude1
-      parentName: ririri:sebone
-      position: {x: -0.05038701, y: -0.078514, z: 0.034609426}
-      rotation: {x: 0.0299321, y: -0.01887229, z: 0.75367075, w: 0.65629894}
-      scale: {x: 1, y: 1.0000007, z: 0.9999995}
-    - name: right_hiji1
-      parentName: right_ude1
-      position: {x: -0.19669174, y: -0.0015768352, z: 0.011410428}
-      rotation: {x: -0.00068862917, y: 0.017600985, z: 0.028556813, w: 0.99943703}
-      scale: {x: 1, y: 0.9999997, z: 1}
-    - name: joint59
-      parentName: right_hiji1
-      position: {x: -0.25463375, y: -0.013936797, z: 0.005710473}
-      rotation: {x: 0.99848276, y: 0.055026405, z: -0.0007701927, w: 0.0019304082}
-      scale: {x: 1, y: 0.99999994, z: 0.99999994}
-    - name: joint41
-      parentName: joint59
-      position: {x: -0.11279842, y: -0.0009834017, z: -0.009259619}
-      rotation: {x: 0.011730557, y: -0.021284327, z: -0.32462293, w: 0.94553125}
-      scale: {x: 1.0000002, y: 0.9999997, z: 0.9999998}
-    - name: suka_r
-      parentName: all
-      position: {x: -0.21120888, y: 0.06039369, z: 0.09367319}
-      rotation: {x: -0.117502324, y: 0.02002812, z: 0.9921198, w: -0.038606003}
-      scale: {x: 1, y: 1.0000004, z: 0.9999998}
-    - name: joint47
-      parentName: suka_r
-      position: {x: -0.19459707, y: -0.008532542, z: 0.00032258144}
-      rotation: {x: -0.015236786, y: -0.106490046, z: -0.015878942, w: 0.9940702}
-      scale: {x: 0.9999998, y: 1.0000006, z: 1.0000005}
-    - name: joint48
-      parentName: joint47
-      position: {x: -0.12370417, y: -0.011003249, z: 0.003587307}
-      rotation: {x: -0.30803007, y: 0.06432703, z: -0.021548206, w: 0.9489548}
-      scale: {x: 1.0000012, y: 1.0000006, z: 0.99999976}
-    - name: joint49
-      parentName: joint48
-      position: {x: -0.1185254, y: -0.012168403, z: -0.006758935}
-      rotation: {x: -0.0020681669, y: -0.06453829, z: -0.010025882, w: 0.9978627}
-      scale: {x: 1, y: 1.0000001, z: 0.9999999}
-    - name: suka_l
-      parentName: all
-      position: {x: -0.20789371, y: -0.062471036, z: 0.0951698}
-      rotation: {x: -0.120822445, y: -0.0071291607, z: 0.9923627, w: -0.023823602}
-      scale: {x: 1.000001, y: 1.000001, z: 0.9999995}
-    - name: joint43
-      parentName: suka_l
-      position: {x: -0.19354406, y: 0.021925688, z: -0.0008974962}
-      rotation: {x: 0.012603128, y: -0.055451665, z: -0.017710341, w: 0.9982248}
-      scale: {x: 1.0000006, y: 1.0000002, z: 1.0000002}
-    - name: joint44
-      parentName: joint43
-      position: {x: -0.12335325, y: 0.011003319, z: -0.009975426}
-      rotation: {x: 0.30639365, y: 0.012214651, z: 0.038400833, w: 0.95105153}
-      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000001}
-    - name: joint45
-      parentName: joint44
-      position: {x: -0.118525915, y: 0.012168245, z: -0.0067594144}
-      rotation: {x: 0.0021388046, y: -0.071573436, z: 0.010011147, w: 0.9973828}
-      scale: {x: 1.0000004, y: 1.0000001, z: 0.99999976}
-    - name: suka1_l
-      parentName: all
-      position: {x: -0.20789406, y: -0.064945295, z: -0.10795093}
-      rotation: {x: -0.0025157814, y: 0.97503597, z: -0.011833484, w: -0.22171703}
-      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000006}
-    - name: joint51
-      parentName: suka1_l
-      position: {x: -0.20391604, y: -0.021690952, z: 0.020729458}
-      rotation: {x: -0.012603121, y: -0.055451684, z: 0.017710283, w: 0.99822474}
-      scale: {x: 0.9999998, y: 0.9999997, z: 1.0000001}
-    - name: joint52
-      parentName: joint51
-      position: {x: -0.12381867, y: -0.011003249, z: -0.008643306}
-      rotation: {x: 0.0039632884, y: -0.096142486, z: -0.016218474, w: 0.9952276}
-      scale: {x: 0.9999998, y: 0.9999996, z: 1.0000008}
-    - name: joint53
-      parentName: joint52
-      position: {x: -0.116352335, y: -0.012225033, z: -0.0064452356}
-      rotation: {x: -0.0021388014, y: -0.07157347, z: -0.010011135, w: 0.9973828}
-      scale: {x: 0.99999994, y: 1.0000002, z: 1.0000011}
-    - name: suka1_r
-      parentName: all
-      position: {x: -0.21120888, y: 0.057919476, z: -0.109447934}
-      rotation: {x: -0.02108032, y: 0.9748211, z: -0.006022617, w: -0.2219084}
-      scale: {x: 1.0000005, y: 1.0000005, z: 1.0000004}
-    - name: joint55
-      parentName: suka1_r
-      position: {x: -0.2039158, y: 0.021690957, z: 0.020728955}
-      rotation: {x: 0.012603158, y: -0.05545158, z: -0.017710427, w: 0.99822474}
-      scale: {x: 1.0000004, y: 1.0000007, z: 1.0000008}
-    - name: joint56
-      parentName: joint55
-      position: {x: -0.12381868, y: 0.011003249, z: -0.008643293}
-      rotation: {x: -0.0039633093, y: -0.0961425, z: 0.016218552, w: 0.9952275}
-      scale: {x: 0.9999996, y: 0.99999994, z: 1.0000008}
-    - name: joint57
-      parentName: joint56
-      position: {x: -0.11635265, y: 0.012225024, z: -0.0064452807}
-      rotation: {x: 0.0021388081, y: -0.071573466, z: 0.010011147, w: 0.99738276}
-      scale: {x: 1, y: 1.0000002, z: 1.0000002}
-    - name: left_asi
-      parentName: all
-      position: {x: -0.07876627, y: -0.0836856, z: -0.009087415}
-      rotation: {x: -0.00021651015, y: -0.024824345, z: 0.99879766, w: -0.042274475}
-      scale: {x: 1.0000007, y: 1.000001, z: 0.9999996}
-    - name: ririri:left_hiza
-      parentName: left_asi
-      position: {x: -0.2562803, y: -0.000510672, z: -4.690692e-17}
-      rotation: {x: 0.025332982, y: -0.087794974, z: -0.0043458208, w: 0.99580693}
-      scale: {x: 1.0000013, y: 1.0000012, z: 1}
-    - name: ririri:left_anyo
-      parentName: ririri:left_hiza
-      position: {x: -0.19620141, y: 0.00047276542, z: 0.001524026}
-      rotation: {x: 0.023467796, y: 0.738689, z: -0.014440747, w: 0.6734829}
-      scale: {x: 1.0000014, y: 1.0000007, z: 1.0000001}
-    - name: ririri:left_saki
-      parentName: ririri:left_anyo
-      position: {x: -0.15045595, y: 8.881784e-18, z: -0.009429168}
-      rotation: {x: 0.0041945446, y: 0.0071696937, z: 0.007565737, w: 0.99993694}
-      scale: {x: 0.99999994, y: 1.0000004, z: 1.0000002}
-    - name: right_asi
-      parentName: all
-      position: {x: -0.08315737, y: 0.0790709, z: -0.011111056}
-      rotation: {x: -0.9991981, y: 0.015317813, z: -0.0014005916, w: -0.03696865}
-      scale: {x: 1.000001, y: 1.0000008, z: 1.0000008}
-    - name: ririri:right_hiza1
-      parentName: right_asi
-      position: {x: 0.25628, y: 0.00051063637, z: -1.309679e-11}
-      rotation: {x: 0.025332998, y: -0.08779497, z: -0.0043458226, w: 0.99580693}
-      scale: {x: 1.000001, y: 1.0000013, z: 1.000002}
-    - name: ririri:right_anyo1
-      parentName: ririri:right_hiza1
-      position: {x: 0.19620168, y: -0.00047275072, z: -0.0015240724}
-      rotation: {x: 0.023715984, y: 0.73744065, z: -0.015394851, w: 0.6748199}
-      scale: {x: 1.0000007, y: 1.0000008, z: 1.0000011}
-    - name: ririri:right_saki1
-      parentName: ririri:right_anyo1
-      position: {x: 0.15045595, y: 1.5603607e-10, z: 0.00942917}
-      rotation: {x: 0.004194529, y: 0.0071697813, z: 0.007565789, w: 0.9999369}
-      scale: {x: 1, y: 0.99999994, z: 1.0000001}
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
