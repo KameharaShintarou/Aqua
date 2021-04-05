@@ -161,7 +161,7 @@ public class Player : MonoBehaviour
     {
         if (isGrounded)
         {
-            Rigidbody.AddForce((Position == Position.AboveGround ? Vector3.up : Vector3.down) * 6.5f, ForceMode.Impulse);
+            Rigidbody.AddForce((Position == Position.AboveGround ? Vector3.up : Vector3.down) * 5.5f, ForceMode.Impulse);
         }
     }
 
