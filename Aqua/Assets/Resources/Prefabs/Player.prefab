@@ -34,7 +34,7 @@ MonoBehaviour:
   animations: []
   delayWeight: 0
   isKeepFace: 0
-  isGUI: 1
+  isGUI: 0
 --- !u!1 &3601028230097619857
 GameObject:
   m_ObjectHideFlags: 0

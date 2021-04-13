@@ -153,7 +153,7 @@ public class Player : MonoBehaviour
 
     void AddGravityForce()
     {
-        Rigidbody.AddForce((Position == Position.AboveGround ? Vector3.down : Vector3.up) * 5, ForceMode.Force);
+        Rigidbody.AddForce((Position == Position.AboveGround ? Vector3.down : Vector3.up) * 7, ForceMode.Force);
         //velocity += new Vector3(0, 9.81f * Time.deltaTime * (Position == Position.AboveGround ? -1 : 1), 0);
     }
 
