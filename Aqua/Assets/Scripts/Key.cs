@@ -27,6 +27,11 @@ public class Key : MonoBehaviour
     //{
     //}
 
+    void Update()
+    {
+        transform.rotation = Quaternion.Euler(0, transform.localEulerAngles.y + 135 * Time.deltaTime, 0);
+    }
+
     void OnValidate()
     {
         switch (keyColor)
