@@ -248,6 +248,11 @@ public class Player : MonoBehaviour
         return isPlaying;
     }
 
+    public bool GetIsGrounded()
+    {
+        return isGrounded;
+    }
+
     void OnCollisionStay(Collision collision)
     {
         if (!collision.gameObject.CompareTag("Ground"))
