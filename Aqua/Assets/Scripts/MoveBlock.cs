@@ -13,9 +13,14 @@ public class MoveBlock : MonoBehaviour
 
     BoxCollider Collider;
 
+    GameObject Effect;
+
+    float moveTime;
+
     void Start()
     {
         Collider = gameObject.GetComponent<BoxCollider>();
+        Effect = (GameObject)Resources.Load("Prefabs/DustParticle");
     }
 
     void Update()
@@ -28,7 +33,17 @@ public class MoveBlock : MonoBehaviour
                  transform.position.z);
 
             LinkBlock.transform.position = position;
+
+            if (moveTime > 0.1f)
+            {
+                moveTime = 0;
+                Instantiate(Effect, transform.position - Vector3.up * 2.1f, Quaternion.Euler(-90, 0, 0));
+            }
+
+            moveTime += Time.deltaTime;
         }
+
+        beforePosition = transform.position;
     }
 
     public void SetLinkBlock(GameObject gameObject)

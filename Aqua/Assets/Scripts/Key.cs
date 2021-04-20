@@ -23,6 +23,9 @@ public class Key : MonoBehaviour
     [SerializeField]
     Material[] Materials;
 
+    [SerializeField]
+    GameObject Effect;
+
     //void Awake()
     //{
     //}
@@ -56,6 +59,7 @@ public class Key : MonoBehaviour
 
             if (player.GetIsPlaying())
             {
+                Instantiate(Effect, transform.position, Quaternion.Euler(-90, 0, 0));
                 StageController.GetKey();
                 Destroy(gameObject);
             }
