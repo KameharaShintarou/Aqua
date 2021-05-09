@@ -4,20 +4,52 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
+    enum KeyColor
+    {
+        Bronze,
+        Silver,
+        Gold,
+    }
+
+    [SerializeField]
+    KeyColor keyColor;
+
     [SerializeField]
     StageController StageController;
 
-    //// Start is called before the first frame update
-    //void Start()
+    [SerializeField]
+    MeshRenderer MeshRenderer;
+
+    [SerializeField]
+    Material[] Materials;
+
+    [SerializeField]
+    GameObject Effect;
+
+    //void Awake()
     //{
-        
     //}
 
-    //// Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
+    void Update()
+    {
+        transform.rotation = Quaternion.Euler(0, transform.localEulerAngles.y + 135 * Time.deltaTime, 0);
+    }
+
+    void OnValidate()
+    {
+        switch (keyColor)
+        {
+            case KeyColor.Bronze:
+                MeshRenderer.material = Materials[0];
+                break;
+            case KeyColor.Silver:
+                MeshRenderer.material = Materials[1];
+                break;
+            case KeyColor.Gold:
+                MeshRenderer.material = Materials[2];
+                break;
+        }
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -27,6 +59,7 @@ public class Key : MonoBehaviour
 
             if (player.GetIsPlaying())
             {
+                Instantiate(Effect, transform.position, Quaternion.Euler(-90, 0, 0));
                 StageController.GetKey();
                 Destroy(gameObject);
             }

@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
 
     bool isGrounded;
 
-    float moveSpeed = 10;
+    float moveSpeed = 7.5f;
 
     Vector3 velocity;
 
@@ -84,9 +84,9 @@ public class Player : MonoBehaviour
                 velocity = Vector3.zero;
 
                 velocity = new Vector3(
-                    Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime * (isPlaying ? 1 : -1),
+                    horizontal * moveSpeed * Time.deltaTime * (isPlaying ? 1 : -1) * (isGrounded ? 1 : 0.75f),
                     0,
-                    isUp ? Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime * (PlayingPosition == Position.UnderWater ? 1 : -1) : 0);
+                    isUp ? Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime * (PlayingPosition == Position.UnderWater ? 1 : -1) : 0) * (isGrounded ? 1 : 0.75f);
 
                 transform.position += velocity;
 
@@ -153,7 +153,7 @@ public class Player : MonoBehaviour
 
     void AddGravityForce()
     {
-        Rigidbody.AddForce((Position == Position.AboveGround ? Vector3.down : Vector3.up) * 5, ForceMode.Force);
+        Rigidbody.AddForce((Position == Position.AboveGround ? Vector3.down : Vector3.up) * 9, ForceMode.Force);
         //velocity += new Vector3(0, 9.81f * Time.deltaTime * (Position == Position.AboveGround ? -1 : 1), 0);
     }
 
@@ -161,7 +161,7 @@ public class Player : MonoBehaviour
     {
         if (isGrounded)
         {
-            Rigidbody.AddForce((Position == Position.AboveGround ? Vector3.up : Vector3.down) * 7, ForceMode.Impulse);
+            Rigidbody.AddForce((Position == Position.AboveGround ? Vector3.up : Vector3.down) * 5, ForceMode.Impulse);
         }
     }
 
@@ -172,7 +172,7 @@ public class Player : MonoBehaviour
             gameObject.transform.position + (Position == Position.AboveGround ? Vector3.up * 0.05f : Vector3.down * 0.05f), 
             (Position == Position.AboveGround ? Vector3.down : Vector3.up));
 
-        Debug.DrawRay(ray.origin, ray.direction * 0.1f);
+        //Debug.DrawRay(ray.origin, ray.direction * 0.1f);
 
         RaycastHit hit;
 
@@ -181,7 +181,6 @@ public class Player : MonoBehaviour
             if ((!hit.collider.CompareTag("Player")) &&
                 hit.distance <= 0.1f)
             {
-                //Debug.Log("Ground");
                 return true;
             }
         }
@@ -249,10 +248,10 @@ public class Player : MonoBehaviour
         return isPlaying;
     }
 
-    //public void SetDifference(Vector3 difference)
-    //{
-    //    this.difference = difference;
-    //}
+    public bool GetIsGrounded()
+    {
+        return isGrounded;
+    }
 
     void OnCollisionStay(Collision collision)
     {

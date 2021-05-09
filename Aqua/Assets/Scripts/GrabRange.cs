@@ -9,7 +9,8 @@ public class GrabRange : MonoBehaviour
 
      void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("MoveBlock"))
+        if (other.gameObject.CompareTag("MoveBlock") &&
+            Player.GetIsGrounded())
         {
             Player.SetIsGrab(true);
             Player.SetGrabBlock(other.gameObject.GetComponent<MoveBlock>());
