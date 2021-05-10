@@ -11,6 +11,8 @@ public class SelectStage : MonoBehaviour
     [SerializeField]
     private Button selectedButton = null;
 
+
+
     public void Start()
     {
         // はじめに選択状態に設定
