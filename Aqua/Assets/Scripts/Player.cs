@@ -73,6 +73,7 @@ public class Player : MonoBehaviour
         switch (currentState)
         {
             case PlayerState.Idle:
+
             case PlayerState.Walk:
                 // 移動操作[-1, 1]
                 var horizontal = Input.GetAxis("Horizontal");
@@ -164,7 +165,6 @@ public class Player : MonoBehaviour
             Rigidbody.AddForce((Position == Position.AboveGround ? Vector3.up : Vector3.down) * 5, ForceMode.Impulse);
         }
     }
-
     // 接地判定
     bool IsGrounded()
     {
