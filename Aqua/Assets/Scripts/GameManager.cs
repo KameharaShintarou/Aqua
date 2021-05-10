@@ -27,7 +27,8 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (InputManager.GetJoystickButtonTrigger())
+        if (InputManager.GetJoystickButtonTrigger() ||
+            Input.GetKeyDown(KeyCode.Return))
         {
             switch (PlayingPosition)
             {
@@ -43,7 +44,8 @@ public class GameManager : MonoBehaviour
             UnderWater.ChangePosition(PlayingPosition);
         }
         else if (Input.GetKeyDown("joystick button 4") ||
-                 Input.GetKeyDown("joystick button 5"))
+                 Input.GetKeyDown("joystick button 5") ||
+                 Input.GetKeyDown(KeyCode.Backspace))
         {
             ChangeViewPoint();
         }
