@@ -1515,7 +1515,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &720754173
 Transform:
   m_ObjectHideFlags: 0
@@ -2900,6 +2900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aade90d83d153344a88e599956c568a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageLength: 5
   KeyText: {fileID: 1792241615}
   Goal: {fileID: 380142704}
   keyCount: 0
@@ -3674,7 +3675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1822366768
 Transform:
   m_ObjectHideFlags: 0
@@ -4243,6 +4244,11 @@ PrefabInstance:
       propertyPath: PlayingPosition
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3601028230131462657, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
+        type: 3}
+      propertyPath: StageController
+      value: 
+      objectReference: {fileID: 1491334744}
     - target: {fileID: 3601028230131462663, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
         type: 3}
       propertyPath: m_Name
@@ -4624,6 +4630,11 @@ PrefabInstance:
       propertyPath: sideCamera
       value: 
       objectReference: {fileID: 777066171}
+    - target: {fileID: 3601028230131462657, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
+        type: 3}
+      propertyPath: StageController
+      value: 
+      objectReference: {fileID: 1491334744}
     - target: {fileID: 3601028230131462663, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
         type: 3}
       propertyPath: m_Name

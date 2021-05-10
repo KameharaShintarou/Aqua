@@ -42,6 +42,11 @@ public class Player : MonoBehaviour
 
     Vector3 velocity;
 
+    [SerializeField]
+    StageController StageController;
+
+    int stageLength;
+
     // 事前参照用の変数
     private new Rigidbody rigidbody = null;
     // アニメーションのパラメーターID
@@ -62,6 +67,8 @@ public class Player : MonoBehaviour
     {
         isUp = false;
         MoveBlockCollider.enabled = false;
+
+        stageLength = StageController.GetStageLength();
 
         // コンポーネントを事前に参照
         rigidbody = GetComponent<Rigidbody>();
@@ -141,6 +148,14 @@ public class Player : MonoBehaviour
 
     void LateUpdate()
     {
+        float LimitRange = stageLength * 3.5f - 8.9f;
+
+        if (transform.position.x <= -LimitRange ||
+            transform.position.x >= LimitRange)
+        {
+            return;
+        }
+
         sideCamera.transform.position = new Vector3(
             transform.position.x,
             sideCamera.transform.position.y,
@@ -149,7 +164,7 @@ public class Player : MonoBehaviour
         upCamera.transform.position = new Vector3(
             transform.position.x,
             upCamera.transform.position.y,
-            transform.position.z);
+            upCamera.transform.position.z);
     }
 
     void AddGravityForce()

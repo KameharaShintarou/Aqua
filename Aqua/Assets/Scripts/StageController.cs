@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class StageController : MonoBehaviour
 {
     [SerializeField]
+    int stageLength;
+
+    [SerializeField]
     Text KeyText;
 
     [SerializeField]
@@ -35,5 +38,10 @@ public class StageController : MonoBehaviour
         {
             Goal.OnGoalFlag();
         }
+    }
+
+    public int GetStageLength()
+    {
+        return stageLength;
     }
 }
