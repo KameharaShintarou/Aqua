@@ -34,7 +34,7 @@ public class Goal : MonoBehaviour
                 goalFlag)
             {
                 // SceneChangeのスクリプトの関数に置き換えたい
-                SceneManager.LoadScene("Title");
+                SceneManager.LoadScene("GameClear");
             }
         }
     }
