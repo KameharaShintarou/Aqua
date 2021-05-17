@@ -87,6 +87,7 @@ public class Player : MonoBehaviour
             case PlayerState.Walk:
                 // 移動操作[-1, 1]
                 var horizontal = Input.GetAxis("Horizontal");
+                var vertical   = Input.GetAxis("Vertical");
 
                 animator.SetFloat(speedId, Mathf.Abs(horizontal));
 
@@ -134,8 +135,27 @@ public class Player : MonoBehaviour
                 velocity = new Vector3(
                     horizontal * moveSpeed * Time.deltaTime * (isPlaying ? 1 : -1) * (isGrounded ? 1 : 0.75f),
                     0,
-                    isUp ? Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime * (PlayingPosition == Position.UnderWater ? 1 : -1) : 0) * (isGrounded ? 1 : 0.75f);
+                    isUp ? vertical * moveSpeed * Time.deltaTime * (PlayingPosition == Position.UnderWater ? 1 : -1) : 0) * (isGrounded ? 1 : 0.75f);
 
+                if (horizontal != 0 ||
+                    vertical != 0)
+                {
+                    float rotate;
+
+                    if (isPlaying &&
+                        PlayingPosition == Position.AboveGround)
+                    {
+                        rotate = Mathf.Atan2( vertical, horizontal) * Mathf.Rad2Deg;
+                        transform.rotation = Quaternion.Euler(new Vector3(0, rotate, 0));
+                    }
+                    else if (
+                        isPlaying &&
+                        PlayingPosition == Position.UnderWater)
+                    {
+                        rotate = Mathf.Atan2(-vertical, horizontal) * Mathf.Rad2Deg;
+                        transform.rotation = Quaternion.Euler(new Vector3(180, rotate - 180, 0));
+                    }
+                }
 
                 //if (isPlaying)
                 //{
