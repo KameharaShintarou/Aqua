@@ -22,10 +22,10 @@ public class SelectStage : MonoBehaviour
     public void OnClickStageButton(int stageNo)
     {
         //// ステージ番号からシーン名を作成して読み込む。
-        //var sceneName = string.Format("Stage{0}", stageNo);
-        //SceneManager.LoadScene(sceneName);
+        var sceneName = string.Format("Stage{0}", stageNo);
+        SceneManager.LoadScene(sceneName);
 
         //TODO: 現在Stageシーンのみなため一時的にこちらを使用する
-        SceneManager.LoadScene("Stage");
+        //SceneManager.LoadScene("Stage");
     }
 }
