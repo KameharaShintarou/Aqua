@@ -7619,6 +7619,11 @@ PrefabInstance:
       propertyPath: PlayingPosition
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3601028230131462657, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
+        type: 3}
+      propertyPath: StageController
+      value: 
+      objectReference: {fileID: 1491334744}
     - target: {fileID: 3601028230131462663, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
         type: 3}
       propertyPath: m_Name
@@ -8010,6 +8015,11 @@ PrefabInstance:
       propertyPath: sideCamera
       value: 
       objectReference: {fileID: 777066171}
+    - target: {fileID: 3601028230131462657, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
+        type: 3}
+      propertyPath: StageController
+      value: 
+      objectReference: {fileID: 1491334744}
     - target: {fileID: 3601028230131462663, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
         type: 3}
       propertyPath: m_Name
