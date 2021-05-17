@@ -27,8 +27,10 @@ public class Player : MonoBehaviour
     bool isPlaying;
     bool isUp;
 
-    // 物をつかんでいるかどうか
+    // 物を掴めるかどうか
     bool isGrab;
+    // 物を掴んでいるかどうか
+    bool isGrabing;
     // 掴んでいるブロック
     MoveBlock GrabBlock;
     [SerializeField]
@@ -66,6 +68,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         isUp = false;
+        isGrabing = false;
         MoveBlockCollider.enabled = false;
 
         stageLength = StageController.GetStageLength();
@@ -89,16 +92,8 @@ public class Player : MonoBehaviour
 
                 isGrounded = IsGrounded();
 
-                velocity = Vector3.zero;
-
-                velocity = new Vector3(
-                    horizontal * moveSpeed * Time.deltaTime * (isPlaying ? 1 : -1) * (isGrounded ? 1 : 0.75f),
-                    0,
-                    isUp ? Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime * (PlayingPosition == Position.UnderWater ? 1 : -1) : 0) * (isGrounded ? 1 : 0.75f);
-
-                transform.position += velocity;
-
                 if (isGrab &&
+                    isGrounded &&
                     PlayingPosition == Position &&
                     Input.GetButtonDown("Fire2"))
                 {
@@ -115,10 +110,11 @@ public class Player : MonoBehaviour
                     difference = new Vector3(difference.x,
                                              GrabBlock.transform.position.y - transform.position.y,
                                             -difference.z);
+
+                    isGrabing = true;
                 }
-                if (isGrab &&
-                    PlayingPosition == Position &&
-                    Input.GetButton("Fire2"))
+                if (isGrabing &&
+                    PlayingPosition == Position)
                 {
                     GrabBlock.transform.position = transform.position + difference;
                 }
@@ -128,13 +124,36 @@ public class Player : MonoBehaviour
                 {
                     MoveBlockCollider.enabled = false;
                     GrabBlock.GetCollider().enabled = true;
+
+                    isGrabing = false;
                 }
-                if (Input.GetButtonDown("Fire1"))
+
+
+                velocity = Vector3.zero;
+
+                velocity = new Vector3(
+                    horizontal * moveSpeed * Time.deltaTime * (isPlaying ? 1 : -1) * (isGrounded ? 1 : 0.75f),
+                    0,
+                    isUp ? Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime * (PlayingPosition == Position.UnderWater ? 1 : -1) : 0) * (isGrounded ? 1 : 0.75f);
+
+
+                //if (isPlaying)
+                //{
+                //    velocity = new Vector3(
+                //        horizontal * moveSpeed * Time.deltaTime,
+                //        0,
+                //        Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
+                //}
+
+                transform.position += velocity;
+
+                if (isGrabing == false &&
+                    Input.GetButtonDown("Fire1"))
                 {
                     Jump();
                 }
 
-                if (!isGrounded)
+                if (isGrounded == false)
                 {
                     AddGravityForce();
                 }
