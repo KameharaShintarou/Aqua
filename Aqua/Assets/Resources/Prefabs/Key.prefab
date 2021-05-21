@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e8883ceeab1d54295cbb26879eaa6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyColor: 0
+  keyColor: 2
   StageController: {fileID: 0}
   MeshRenderer: {fileID: 6277517960104546891}
   Materials:
@@ -213,6 +213,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: key1_contents
       objectReference: {fileID: 0}
+    - target: {fileID: 2907553542176332803, guid: 238fc3cdeebdb854f823b11754f7f1c1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9e0298c87b0c48c4b8bdbfe104c656b8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 238fc3cdeebdb854f823b11754f7f1c1, type: 3}
 --- !u!4 &8704671537569900963 stripped
