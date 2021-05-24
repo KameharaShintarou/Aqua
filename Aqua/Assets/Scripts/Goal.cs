@@ -33,8 +33,18 @@ public class Goal : MonoBehaviour
             if (player.GetIsPlaying() &&
                 goalFlag)
             {
-                // SceneChangeのスクリプトの関数に置き換えたい
-                SceneManager.LoadScene("GameClear");
+                switch (SceneManager.GetActiveScene().name)
+                {
+                    case "Stage1":
+                        SceneManager.LoadScene("StageClear1");
+                        break;
+                    case "Stage2":
+                        SceneManager.LoadScene("StageClear2");
+                        break;
+                    case "Stage3":
+                        SceneManager.LoadScene("StageClear3");
+                        break;
+                }
             }
         }
     }
