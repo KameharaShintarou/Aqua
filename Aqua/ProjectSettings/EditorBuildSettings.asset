@@ -21,22 +21,28 @@ EditorBuildSettings:
     path: Assets/Scenes/Stage2.unity
     guid: bfcd3c4b9f86d0f458f1902f82aba83b
   - enabled: 1
-    path: Assets/Scenes/StageClear.unity
-    guid: f8338e28a54694d49a5bd34421543ee8
+    path: Assets/Scenes/stage3.unity
+    guid: 44b4e20f9848e0644b33b4fad4a6c4a8
   - enabled: 1
     path: Assets/Scenes/StageClear1.unity
     guid: 1f9306baa7618554a843fcfdf25e28d3
   - enabled: 1
     path: Assets/Scenes/StageClear2.unity
-    guid: 055fd35398e062c46ac364fb3fd6e130
+    guid: 222ab6ff48d33304ea2e52358b7874f0
   - enabled: 1
-    path: Assets/Scenes/GameOver.unity
-    guid: d9d9ab44b7074494d97e963b35ae4a13
+    path: Assets/Scenes/StageClear3.unity
+    guid: 4d3a76e4c5259d44093504026ea95ccd
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/GameOver1.unity
     guid: 1d6ea0c196a937a4184d5130835fb483
   - enabled: 1
     path: Assets/Scenes/GameOver2.unity
+    guid: b38e81fdd8d5a1745bc884acd101c21c
+  - enabled: 1
+    path: Assets/Scenes/GameOver3.unity
     guid: 87d92039f259a5746830cca07045f5e0
   - enabled: 0
     path: 
