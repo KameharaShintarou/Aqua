@@ -6372,6 +6372,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 998535430}
     m_Modifications:
+    - target: {fileID: 1906152144382237604, guid: 2b586399f98576a41ac00b9ef11cb3a3,
+        type: 3}
+      propertyPath: StageController
+      value: 
+      objectReference: {fileID: 1491334744}
     - target: {fileID: 2668822552306137140, guid: 2b586399f98576a41ac00b9ef11cb3a3,
         type: 3}
       propertyPath: m_RootOrder
@@ -7443,7 +7448,7 @@ MonoBehaviour:
   stageLength: 5
   KeyText: {fileID: 1792241615}
   Goal: {fileID: 380142704}
-  keyCount: 0
+  keyCount: 3
   GroundPrefab: {fileID: 924919966795883312, guid: fe92e7054bf5d66428c7c5ef62120694,
     type: 3}
   Grounds:
@@ -9893,6 +9898,11 @@ PrefabInstance:
       propertyPath: another
       value: 
       objectReference: {fileID: 1678970013}
+    - target: {fileID: 3601028230131462657, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
+        type: 3}
+      propertyPath: Position
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3601028230131462657, guid: f98510b37a01a8f4fa65fb7bd8f4b7b1,
         type: 3}
       propertyPath: UpCamera
